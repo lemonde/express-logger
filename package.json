@@ -1,0 +1,24 @@
+{
+  "name": "express-logger",
+  "version": "0.0.0",
+  "description": "Express logger middlewares.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lemonde/express-logger.git"
+  },
+  "keywords": [
+    "express",
+    "logger",
+    "log"
+  ],
+  "author": "Greg Bergé <berge.greg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lemonde/express-logger/issues"
+  },
+  "homepage": "https://github.com/lemonde/express-logger"
+}
