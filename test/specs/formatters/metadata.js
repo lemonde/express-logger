@@ -1,13 +1,13 @@
 var expect = require('chai').expect;
 var request = require('supertest');
-var metadataFormatter = require('../../../lib/formatters/metadata');
+var formatter = require('../../../lib/formatters/metadata');
 var express = require('../../utils/express');
 
 describe('Metadata formatter', function () {
   describe('#format', function () {
     it('should define category', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.property('category', 'http-request');
         next();
       });
@@ -20,7 +20,7 @@ describe('Metadata formatter', function () {
 
     it('should add user if present', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('user.id', 2);
         expect(meta).to.have.deep.property('user.email', 'hello@world.com');
         next();
@@ -36,7 +36,7 @@ describe('Metadata formatter', function () {
 
     it('should computes the user agent', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.ua.browser', 'Chrome 35.0.1916');
         expect(meta).to.have.deep.property('clientRequest.ua.os', 'Mac OS X 10.9.2');
         expect(meta).to.have.deep.property('clientRequest.ua.device', 'Other');
@@ -57,7 +57,7 @@ describe('Metadata formatter', function () {
 
     it('should add the ip', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.ip', '127.0.0.1');
         next();
       });
@@ -70,7 +70,7 @@ describe('Metadata formatter', function () {
 
     it('should add the uuid if avalaible', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.uuid', 10000);
         next();
       }, {
@@ -85,7 +85,7 @@ describe('Metadata formatter', function () {
 
     it('should add qs', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.qs.x', 'test');
         next();
       });
@@ -98,7 +98,7 @@ describe('Metadata formatter', function () {
 
     it('should add headers', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.headers.xtest', 'OK');
         next();
       }, {
@@ -115,7 +115,7 @@ describe('Metadata formatter', function () {
 
     it('should add path', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.path', '/test');
         next();
       });
@@ -128,7 +128,7 @@ describe('Metadata formatter', function () {
 
     it('should add status code', function (done) {
       var server = express.createServer(function (req, res, next) {
-        var meta = metadataFormatter.format(req, res);
+        var meta = formatter.format(req, res);
         expect(meta).to.have.deep.property('clientRequest.statusCode', 200);
         next();
       });

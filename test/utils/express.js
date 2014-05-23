@@ -20,7 +20,7 @@ function createServer(middleware, options){
     _.merge(req, options);
     middleware(req, res, function (err) {
       res.setHeader('Content-Type', 'application/json');
-      res.statusCode = err ? (err.status || 500) : res.statusCode;
+      res.statusCode = err ? err.status || 500 : res.statusCode;
       var body = res.metadata ? _.pick(res, 'metadata', 'body') : res.body;
       res.end(err ? err.message : JSON.stringify(body));
     });
