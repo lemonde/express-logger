@@ -4,7 +4,7 @@
   "description": "Express logger middlewares.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/lemonde/express-logger/issues"
   },
-  "homepage": "https://github.com/lemonde/express-logger"
+  "homepage": "https://github.com/lemonde/express-logger",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.19.0",
+    "sinon": "^1.10.0",
+    "sinon-chai": "^2.5.0",
+    "supertest": "^0.12.1"
+  },
+  "dependencies": {
+    "express": "^4.3.0",
+    "lodash": "^2.4.1",
+    "remoteip": "^0.1.0",
+    "ua-parser": "^0.3.3"
+  }
 }
