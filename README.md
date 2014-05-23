@@ -8,7 +8,7 @@ Express logger middlewares.
 ## Install
 
 ```
-npm install express-logger
+npm install git://github.com/lemonde/express-logger.git
 ```
 
 ## Usage
