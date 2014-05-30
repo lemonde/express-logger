@@ -26,10 +26,10 @@
     "mocha": "^1.19.0",
     "sinon": "^1.10.0",
     "sinon-chai": "^2.5.0",
-    "supertest": "^0.12.1"
+    "supertest": "^0.12.1",
+    "express": "^4.3.0"
   },
   "dependencies": {
-    "express": "^4.3.0",
     "lodash": "^2.4.1",
     "remoteip": "^0.1.0",
     "ua-parser": "^0.3.3"
