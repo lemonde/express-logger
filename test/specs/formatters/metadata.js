@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var request = require('supertest');
+var remoteip = require('remoteip');
 var formatter = require('../../../lib/formatters/metadata');
 var express = require('../../utils/express');
 
@@ -58,7 +59,8 @@ describe('Metadata formatter', function () {
     it('should add the ip', function (done) {
       var server = express.createServer(function (req, res, next) {
         var meta = formatter.format(req, res);
-        expect(meta).to.have.deep.property('clientRequest.ip', '127.0.0.1');
+        expect(meta).to.have.deep.property('clientRequest.ip', remoteip.get(req));
+        expect(meta)
         next();
       });
 
