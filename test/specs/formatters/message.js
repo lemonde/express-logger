@@ -1,20 +1,21 @@
-var expect = require('chai').expect;
-var request = require('supertest');
-var formatter = require('../../../lib/formatters/message');
-var express = require('../../utils/express');
+const { expect } = require('chai')
+const request = require('supertest')
 
-describe('Message formatter', function () {
-  describe('#format', function () {
-    it('should format message', function (done) {
-      var server = express.createServer(function (req, res, next) {
-        expect(formatter.format(req, res)).to.equal('GET 200 /test');
-        next();
-      });
+const formatter = require('../../../lib/formatters/message')
+const express = require('../../utils/express')
+
+describe('Message formatter', () => {
+  describe('#format', () => {
+    it('should format message', done => {
+      const server = express.createServer((req, res, next) => {
+        expect(formatter.format(req, res)).to.equal('GET 200 /test')
+        next()
+      })
 
       request(server)
-      .get('/test')
-      .expect(200)
-      .end(done);
-    });
-  });
-});
+        .get('/test')
+        .expect(200)
+        .end(done)
+    })
+  })
+})

@@ -1,11 +1,5 @@
-var express = require('express');
-var _ = require('lodash');
-
-/**
- * Expose module.
- */
-
-exports.createServer = createServer;
+const express = require('express')
+const _ = require('lodash')
 
 /**
  * Create a new server.
@@ -14,25 +8,26 @@ exports.createServer = createServer;
  * @param {Object} options
  */
 
-function createServer(middleware, options){
-  var app = express();
+exports.createServer = function createServer(middleware, options) {
+  /* eslint no-unused-vars: "off" */
+  const app = express()
 
-  app.use(function (req, res, next) {
-    _.merge(req, options);
-    next(options ? options.err : null);
-  });
+  app.use((req, res, next) => {
+    _.merge(req, options)
+    next(options ? options.err : null)
+  })
 
-  app.use(middleware);
+  app.use(middleware)
 
-  app.use(function (err, req, res, next) {
-    res.statusCode = err.status || 500;
-    res.end(err.message);
-  });
+  app.use((err, req, res, next) => {
+    res.statusCode = err.status || 500
+    res.end(err.message)
+  })
 
-  app.use(function (req, res) {
-    res.setHeader('Content-Type', 'application/json');
-    var body = res.metadata ? _.pick(res, 'metadata', 'body') : res.body;
-    res.end(JSON.stringify(body));
-  });
-  return app;
+  app.use((req, res) => {
+    res.setHeader('Content-Type', 'application/json')
+    const body = res.metadata ? _.pick(res, 'metadata', 'body') : res.body
+    res.end(JSON.stringify(body))
+  })
+  return app
 }
