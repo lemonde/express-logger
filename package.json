@@ -39,8 +39,8 @@
     "supertest": "^1.1.0"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.15",
     "remoteip": "^0.1.0",
-    "ua-parser": "^0.3.3"
+    "ua-parser": "^0.3.5"
   }
 }

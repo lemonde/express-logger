@@ -897,9 +897,10 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash@^3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
@@ -1235,6 +1236,7 @@ reduce-component@1.0.1:
 remoteip@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/remoteip/-/remoteip-0.1.0.tgz#244c60494b579399e9db6adc687587ca87b5909b"
+  integrity sha1-JExgSUtXk5np22rcaHWHyoe1kJs=
 
 require-uncached@^1.0.3:
   version "1.0.3"
@@ -1528,9 +1530,10 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-ua-parser@^0.3.3:
+ua-parser@^0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/ua-parser/-/ua-parser-0.3.5.tgz#2ff4f9c9e6e2d64d711461f17beb2c9c697f2f1a"
+  integrity sha1-L/T5yebi1k1xFGHxe+ssnGl/Lxo=
   dependencies:
     yamlparser ">=0.0.2"
 
@@ -1590,3 +1593,4 @@ yallist@^2.1.2:
 yamlparser@>=0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/yamlparser/-/yamlparser-0.0.2.tgz#32393e6afc70c8ca066b6650ac6738b481678ebc"
+  integrity sha1-Mjk+avxwyMoGa2ZQrGc4tIFnjrw=
